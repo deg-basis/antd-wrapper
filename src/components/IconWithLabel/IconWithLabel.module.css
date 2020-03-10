@@ -1,0 +1,8 @@
+.root {
+  align-items: center;
+  display: flex;
+}
+
+.icon {
+  margin-right: 8px;
+}

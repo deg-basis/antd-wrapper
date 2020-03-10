@@ -1,0 +1,25 @@
+@font-face {
+  font-family: Basis-IDR-Icons;
+  font-style: normal;
+  font-weight: normal;
+  src:
+    url(../../assets/fonts/Basis-IDR-Icons.eot) format('embedded-opentype'),
+    url(../../assets/fonts/Basis-IDR-Icons.ttf) format('truetype'),
+    url(../../assets/fonts/Basis-IDR-Icons.woff) format('woff');
+}
+
+.root {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  /* stylelint-disable-next-line */
+  font-family: 'Basis-IDR-Icons' !important;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  line-height: 1;
+  speak: none;
+  text-transform: none;
+}
