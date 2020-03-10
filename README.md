@@ -12,6 +12,7 @@ npm run styleguide
 
 - Document how to use
 - Need to improve:
-  - publish
+  - build process
   - linting / code format
   - unit test
+  - components using antd
