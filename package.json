@@ -1,25 +1,7 @@
 {
   "name": "crux",
-  "version": "1.0.0",
   "description": "Components for Rosette User eXperience",
-  "main": "./dist/index.js",
-  "scripts": {
-    "build": "run-s clean tsc copy-css copy-assets",
-    "tsc": "tsc",
-    "copy-css": "cpx src/**/*.css dist",
-    "copy-assets": "ncp src/assets dist/assets",
-    "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\"",
-    "lint": "run-p lint:*",
-    "lint:ts": "eslint --fix \"src/**/*.{ts,tsx}\"",
-    "lint:style": "stylelint --fix \"src/**/*.css\"",
-    "styleguide": "styleguidist server",
-    "styleguide:build": "styleguidist build",
-    "clean": "rimraf ./dist"
-  },
-  "peerDependencies": {
-    "classnames": "^2.2.6",
-    "react": "^16.13.0"
-  },
+  "version": "1.0.0",
   "devDependencies": {
     "@babel/preset-env": "^7.8.7",
     "@babel/preset-react": "^7.8.3",
@@ -35,6 +17,7 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-react": "^7.19.0",
     "file-loader": "^5.1.0",
+    "fixpack": "^3.0.6",
     "husky": "^4.2.3",
     "lint-staged": "^10.0.8",
     "ncp": "^2.0.0",
@@ -53,5 +36,24 @@
     "ts-loader": "^6.2.1",
     "typescript": "^3.8.3",
     "webpack": "^4.42.0"
+  },
+  "main": "./dist/index.js",
+  "peerDependencies": {
+    "classnames": "^2.2.6",
+    "react": "^16.13.0"
+  },
+  "scripts": {
+    "build": "run-s clean tsc copy-css copy-assets",
+    "clean": "rimraf ./dist",
+    "copy-assets": "ncp src/assets dist/assets",
+    "copy-css": "cpx src/**/*.css dist",
+    "fixpack": "fixpack",
+    "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\"",
+    "lint": "run-p lint:*",
+    "lint:style": "stylelint --fix \"src/**/*.css\"",
+    "lint:ts": "eslint --fix \"src/**/*.{ts,tsx}\"",
+    "styleguide": "styleguidist server",
+    "styleguide:build": "styleguidist build",
+    "tsc": "tsc"
   }
 }
