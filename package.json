@@ -9,6 +9,7 @@
     "@types/react": "^16.9.23",
     "@typescript-eslint/eslint-plugin": "^2.23.0",
     "@typescript-eslint/parser": "^2.23.0",
+    "antd": "^4.0.2",
     "babel-loader": "^8.0.6",
     "classnames": "^2.2.6",
     "cpx": "^1.5.0",
@@ -39,6 +40,7 @@
   },
   "main": "./dist/index.js",
   "peerDependencies": {
+    "antd": "^4.0.2",
     "classnames": "^2.2.6",
     "react": "^16.13.0"
   },
