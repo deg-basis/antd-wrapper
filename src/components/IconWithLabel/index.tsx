@@ -1,7 +1,7 @@
 import React from 'react';
 import cx from 'classnames';
 import styles from './IconWithLabel.module.css';
-import { Icon, IconName } from '../Icon';
+import Icon, { IconName } from '../Icon';
 
 /**
  * Basis IDR icons with label
@@ -18,3 +18,5 @@ export const IconWithLabel: React.FC<{
     </span>
   );
 };
+
+export default IconWithLabel;

@@ -4,6 +4,8 @@ Components for Rosette User eXperience
 
 ## Style Guide
 
+To run styleguidist server locally:
+
 ```
 npm run styleguide
 ```
@@ -13,5 +15,4 @@ npm run styleguide
 - Document how to use
 - Need to improve:
   - publish
-  - linting / code format
   - unit test

@@ -2,18 +2,6 @@ import React from 'react';
 import cx from 'classnames';
 import styles from './Icon.module.css';
 
-export type IconName = keyof typeof NAME_CODE_MAP;
-
-/**
- * Basis IDR icons
- */
-export const Icon: React.FC<{
-  name: IconName;
-  className?: string;
-}> = props => {
-  return <span className={cx(styles.root, props.className)}>{NAME_CODE_MAP[props.name]}</span>;
-};
-
 const NAME_CODE_MAP = {
   edit: '\u{e900}',
   back: '\u{e901}',
@@ -83,3 +71,17 @@ const NAME_CODE_MAP = {
   evaluate: '\u{e941}',
   menu: '\u{e942}',
 };
+
+export type IconName = keyof typeof NAME_CODE_MAP;
+
+/**
+ * Basis IDR icons
+ */
+const Icon: React.FC<{
+  name: IconName;
+  className?: string;
+}> = props => {
+  return <span className={cx(styles.root, props.className)}>{NAME_CODE_MAP[props.name]}</span>;
+};
+
+export default Icon;

@@ -1,11 +1,13 @@
 import React from 'react';
 
+export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
+
 /**
  * Heading with dynamic level
  *
  * @prop level heading level
  */
-export const Heading: React.FC<{
+const Heading: React.FC<{
   /** heading level */
   level: HeadingLevel;
 } & React.InputHTMLAttributes<HTMLHeadingElement>> = props => {
@@ -13,4 +15,4 @@ export const Heading: React.FC<{
   return <H {...props}>{props.children}</H>;
 };
 
-export type HeadingLevel = 1 | 2 | 3 | 4 | 5 | 6;
+export default Heading;
