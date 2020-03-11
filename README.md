@@ -27,23 +27,24 @@ Use Crux component
 
 ### Project without CSS Modules enabled
 
-Need `css-loader` in your webpack config file.
+Need to configure `css-loader` in your webpack config file to support CSS Modules on Crux.
 
-Example
+Example:
 
-```json
+```javascript
 {
-  "test": /\.css$/,
-  "use": [
-    "style-loader",
+  test: /\.css$/,
+  include: /node_modules\/crux/,
+  use: [
+    'style-loader',
     {
-      "loader": "css-loader",
-      "options": {
-        "modules": true
-      }
-    }
-  ]
-}
+      loader: 'css-loader',
+      options: {
+        modules: true,
+      },
+    },
+  ],
+},
 ```
 
 ## Style Guide

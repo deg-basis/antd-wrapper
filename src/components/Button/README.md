@@ -1,3 +1,4 @@
 ```jsx
-<Button onClick={() => {}}>Button</Button>
+<Button type="primary">Primary</Button>
+<Button type="danger">Danger</Button>
 ```

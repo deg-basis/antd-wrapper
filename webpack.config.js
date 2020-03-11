@@ -12,12 +12,26 @@ module.exports = {
       },
       {
         test: /\.css$/,
+        exclude: /node_modules/,
         use: [
           'style-loader',
           {
             loader: 'css-loader',
             options: {
               modules: true,
+            },
+          },
+        ],
+      },
+      {
+        test: /\.css$/,
+        include: /node_modules/,
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: false,
             },
           },
         ],
@@ -30,6 +44,6 @@ module.exports = {
   },
   resolve: {
     modules: [path.resolve(__dirname, 'src'), 'node_modules'],
-    extensions: ['.ts', '.tsx'],
+    extensions: ['.js', '.ts', '.tsx'],
   },
 };
