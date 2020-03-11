@@ -4,7 +4,7 @@ Components for Rosette User eXperience
 
 ## How to Use
 
-### create-react-app user
+### Using with create-react-app project
 
 Install libraries
 
@@ -16,7 +16,6 @@ Import Crux
 
 ```
 import { Icon } from 'crux';
-
 ```
 
 Use Crux component
@@ -53,4 +52,18 @@ To run styleguidist server locally:
 
 ```
 npm run styleguide
+```
+
+## Development
+
+To use Crux in your local environment (not on a repo), firstly you need to build:
+
+```
+npm run build
+```
+
+And then, refer it from another project.
+
+```
+npm install <path/to/crux>
 ```
