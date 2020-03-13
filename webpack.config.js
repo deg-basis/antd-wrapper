@@ -1,5 +1,5 @@
 // We use tsc to build the npm package. This webpack config is for Styleguidist. It internally uses webpack,
-// and refer this file.
+// and references this file.
 
 const path = require('path');
 
