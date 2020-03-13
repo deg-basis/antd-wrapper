@@ -24,7 +24,7 @@ Use Crux component
 <Icon name="help" />
 ```
 
-### Project without CSS Modules enabled
+### Project using webpack directory
 
 Need to configure `css-loader` in your webpack config file to support CSS Modules on Crux.
 
