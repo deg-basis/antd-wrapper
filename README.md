@@ -6,10 +6,10 @@ Components for Rosette User eXperience
 
 ### Using with create-react-app project
 
-Install libraries
+Install Crux
 
 ```
-npm install crux antd classnames
+yarn add crux
 ```
 
 Import Crux
@@ -51,7 +51,7 @@ Example:
 To run styleguidist server locally:
 
 ```
-npm run styleguide
+yarn styleguide
 ```
 
 ## Development
@@ -59,11 +59,11 @@ npm run styleguide
 To use Crux in your local environment (not on a repo), firstly you need to build:
 
 ```
-npm run build
+yarn build
 ```
 
 And then, refer it from another project.
 
 ```
-npm install <path/to/crux>
+yarn add <path/to/crux>
 ```
