@@ -6,11 +6,7 @@ Components for Rosette User eXperience
 
 ### Using with create-react-app project
 
-Install Crux
-
-```
-yarn add crux
-```
+Install Crux (TBD)
 
 Import Crux
 
