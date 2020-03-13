@@ -14,13 +14,13 @@ yarn add crux
 
 Import Crux
 
-```
+```javascript
 import { Icon } from 'crux';
 ```
 
 Use Crux component
 
-```
+```jsx
 <Icon name="help" />
 ```
 
@@ -44,6 +44,12 @@ Example:
     },
   ],
 },
+```
+
+If you use Crux in a local directory, `include` should be like this.
+
+```javascript
+include: path.join(__dirname, '../crux/dist/'),
 ```
 
 ## Style Guide
