@@ -69,3 +69,20 @@ And then, refer it from another project.
 ```
 yarn add <path/to/crux>
 ```
+
+## Publishing
+
+Before publishing, you need to login to the GitHub repository. It is required to enter your GitHub authentication token as a password. You can generate your token on GitHub (Settings|Developer settings|Personal access tokens).
+
+```
+npm login --registry=https://npm.pkg.github.com/
+Username: <username>
+Password: <authentication token>
+Email: <email>
+```
+
+And then, type the following command to publish.
+
+```
+npm publish
+```
