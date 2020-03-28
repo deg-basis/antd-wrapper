@@ -1,7 +1,7 @@
 {
-  "name": "crux",
+  "name": "@basistechnology/crux",
   "description": "Components for Rosette User eXperience",
-  "version": "1.0.0",
+  "version": "0.1.0",
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
@@ -44,6 +44,9 @@
     "antd": "^4.0.2",
     "classnames": "^2.2.6",
     "react": "^16.13.0"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
     "build": "run-s clean tsc copy-css copy-assets",
