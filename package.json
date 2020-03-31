@@ -1,7 +1,7 @@
 {
   "name": "@basistechnology/crux",
   "description": "Components for Rosette User eXperience",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "devDependencies": {
     "@babel/core": "^7.8.7",
     "@babel/preset-env": "^7.8.7",
