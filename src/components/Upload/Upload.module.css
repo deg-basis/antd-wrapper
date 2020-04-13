@@ -1,0 +1,24 @@
+.root {
+  height: 90px;
+}
+
+.draggerContent {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.icon {
+  color: #bfbfbf; /* antd gray-6 */
+  font-size: 48px;
+  margin-left: 16px;
+}
+
+.progressContainer {
+  align-items: center;
+  display: flex;
+}
+
+.cancel {
+  margin-top: 16px;
+}
