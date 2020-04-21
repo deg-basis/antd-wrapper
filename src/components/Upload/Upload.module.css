@@ -1,10 +1,11 @@
 .root {
-  height: 90px;
+  /* height: 120px; */
 }
 
-.draggerContent {
+.droppableArea {
   align-items: center;
   display: flex;
+  height: 70px;
   justify-content: center;
 }
 
@@ -12,13 +13,24 @@
   color: #bfbfbf; /* antd gray-6 */
   font-size: 48px;
   margin-left: 16px;
+  margin-right: 16px;
+}
+
+.button {
+  padding: 0 0.2em;
 }
 
 .progressContainer {
   align-items: center;
   display: flex;
+  height: 30px;
+  justify-content: space-between;
+}
+
+.numbers {
+  margin-left: 16px;
 }
 
 .cancel {
-  margin-top: 16px;
+  margin-left: 16px;
 }
