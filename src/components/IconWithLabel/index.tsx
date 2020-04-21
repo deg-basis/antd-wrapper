@@ -3,20 +3,28 @@ import cx from 'classnames';
 import styles from './IconWithLabel.module.css';
 import Icon, { IconName } from '../Icon';
 
-/**
- * Basis IDR icons with label
- */
-export const IconWithLabel: React.FC<{
+const IconWithLabel: React.FC<{
   name: IconName;
   label: string;
   className?: string;
-}> = props => {
+  iconPosition?: 'left' | 'right';
+}> = ({ iconPosition = 'left', ...props }) => {
+  const icon = (
+    <Icon
+      className={cx(styles.root, {
+        [styles.left]: iconPosition === 'left',
+        [styles.right]: iconPosition === 'right',
+      })}
+      name={props.name}
+    />
+  );
   return (
     <span className={cx(styles.root, props.className)}>
-      <Icon className={styles.icon} name={props.name} />
+      {iconPosition === 'left' && icon}
       <span>{props.label}</span>
+      {iconPosition === 'right' && icon}
     </span>
   );
 };
 
-export default IconWithLabel;
+export default React.memo(IconWithLabel);
