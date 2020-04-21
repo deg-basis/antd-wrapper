@@ -8,7 +8,7 @@ export type ButtonType = 'default' | 'primary' | 'ghost' | 'dashed' | 'danger' |
  * A sample component which uses an Ant Design component internally.
  */
 const Button: React.FC<{ type: ButtonType; onClick?: () => void }> = props => {
-  const handleClick = (e: React.MouseEvent<HTMLElement>) => {
+  const handleClick = (e: React.MouseEvent<HTMLElement>): void => {
     e.stopPropagation();
     if (props.onClick) {
       props.onClick();

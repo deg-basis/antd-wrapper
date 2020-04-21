@@ -13,6 +13,15 @@ module.exports = {
   rules: {
     // Use typing with TypeScript
     'react/prop-types': 'off',
+    '@typescript-eslint/explicit-function-return-type': [
+      'warn',
+      {
+        allowExpressions: true,
+        allowTypedFunctionExpressions: true,
+      },
+    ],
+    'react/display-name': 'off',
+    '@typescript-eslint/ban-ts-ignore': 'off',
   },
   settings: {
     react: {
