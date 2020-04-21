@@ -1,13 +1,25 @@
 import React from 'react';
 
-type MessageFunction = () => string | React.ReactNode;
+type MessageFunction = (n: number) => string | React.ReactNode;
 
+/**
+ * Returns appropriate string in singular/plural form for a given number
+ *
+ * Note that this function assumes only one is a singular.
+ *
+ * Usage:
+ * plural(n, {
+ *     default: n => `${n} item`,
+ *     plural: n => `${n} items`,
+ *     0: `no items`,
+ * });
+ */
 export const plural = (
   n: number,
   messages: {
     [key: number]: string | MessageFunction;
-    plural?: string | MessageFunction;
     default: string | MessageFunction;
+    plural?: string | MessageFunction;
   },
 ): string | React.ReactNode => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -16,7 +28,7 @@ export const plural = (
       if (typeof messages[key] === 'function') {
         // messages[key] is a function
         // @ts-ignore
-        return messages[key]();
+        return messages[key](n);
       } else {
         return messages[key];
       }
@@ -28,7 +40,7 @@ export const plural = (
   const message = applyIfExists(n);
   if (message) {
     return message;
-  } else if (n >= 2) {
+  } else if (n !== 1) {
     const pluralMessage = applyIfExists('plural');
     if (pluralMessage) {
       return pluralMessage;
@@ -36,7 +48,7 @@ export const plural = (
   }
 
   if (typeof messages.default === 'function') {
-    return messages.default();
+    return messages.default(n);
   } else {
     return messages.default;
   }
