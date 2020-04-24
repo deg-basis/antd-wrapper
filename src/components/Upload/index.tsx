@@ -72,7 +72,6 @@ const Upload: React.FC<{
   }, [uploadState]);
 
   useEffect(() => {
-    console.log(`A: ${JSON.stringify({ uploadState, numberOfUploadedFiles, numberOfFilesToUpload })}`);
     if (uploadState === 'uploading' && numberOfUploadedFiles === numberOfFilesToUpload) {
       setUploadState('finishing');
     }
@@ -96,7 +95,6 @@ const Upload: React.FC<{
 
     if (props.supportedFileTypes.length > 0 && !props.supportedFileTypes.includes(file.type)) {
       props.onReject(file);
-      console.log(`onReject`);
       setNumberOfProcessedFiles(x => x + 1);
       return false;
     }
