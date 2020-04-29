@@ -8,8 +8,17 @@ Components for Rosette User eXperience
 
 Create `.npmrc` file in your project root directory with the following content.
 
+For npm
+
 ```
 registry=https://npm.pkg.github.com/basistechnology
+
+```
+
+For yarn ([GitHub Packages issue](https://github.community/t5/Project-Development-Help-and/Consume-Github-Package-private-registry-with-yarn/td-p/43463))
+
+```
+@basistechnology:registry=https://npm.pkg.github.com
 ```
 
 And then, login to GitHub Packages. (see _Login to Github Packages_ section)
