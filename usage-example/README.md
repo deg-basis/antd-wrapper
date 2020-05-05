@@ -1,14 +1,19 @@
-# `crux-demo`
+# `crux`/`usage-example`
 
 A simple demo of `crux` components used in a webapp.
 
 ## Requirements
 
-- `crux`: follow the instructions in the crux Readme to add this dependency. [1]
-- Node modules: run `SKIP_PREFLIGHT_CHECK=true yarn install` [2]
+- `crux`: follow the instructions in the crux Readme to get access
+- Node modules: run `SKIP_PREFLIGHT_CHECK=true yarn install` [1]
 
-[1] If the `crux` dependency does not install despite a valid GitHub access token, follow the `crux` readme to `build` the project, then add `"@basistechnology/crux": "../dist/"` instead to `package.json`.
-[2] On `SKIP_PREFLIGHT_CHECK=true`: the parent directory has a conflicting version of `babel-loader`. Setting the variable allows us to run anyway, but it is probably not ideal.
+#### Note on `SKIP_PREFLIGHT_CHECK=true`:
+
+Since the `crux` main project is located in the repo root, `usage-example` is a project in a project.
+On `yarn start`, the demo therefore finds a conflicting version of `babel-loader` in the parent directory.
+
+Setting `SKIP_PREFLIGHT_CHECK=true` allows us to run anyway, but it is probably not ideal.
+This can be removed if the main project is moved to its own subdirectory (thus becoming a sibling of the demo, instead of its parent, and making the demo no longer a project-in-a-project).
 
 ## Running the project
 
