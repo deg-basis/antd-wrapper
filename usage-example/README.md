@@ -30,3 +30,10 @@ This can be removed if the main project is moved to its own subdirectory (thus b
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
+A quick overview of the available scripts from CRA:
+
+- **`yarn start`:** Runs the app in the development mode, available at [http://localhost:3000](http://localhost:3000) in the browser. The page will reload if you make edits, and any linter errors will be shown in the console.
+- **`yarn test`:** Runs any tests that have been added, in interactive watch mode.
+- **`yarn build`:** Builds the app for production, to the `build` folder, minimized and optimized for performance.
+- **`yarn eject`:** "Ejects" the app from create-react-app's infrastructure. This enables freer customization
