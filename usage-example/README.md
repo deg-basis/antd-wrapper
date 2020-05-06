@@ -10,7 +10,13 @@ Once these are exported by `crux`, they may be un-commented. (And updated if the
 ## Requirements
 
 - `crux`: follow the instructions in the crux Readme to get access
-- Node modules: run `SKIP_PREFLIGHT_CHECK=true yarn install` [1]
+- Node modules: run `yarn install`
+
+## Running the project
+
+Run `SKIP_PREFLIGHT_CHECK=true yarn start`.
+
+The demo should become available at `localhost:3000` in your browser.
 
 #### Note on `SKIP_PREFLIGHT_CHECK=true`:
 
@@ -19,12 +25,6 @@ On `yarn start`, the demo therefore finds a conflicting version of `babel-loader
 
 Setting `SKIP_PREFLIGHT_CHECK=true` allows us to run anyway, but it is probably not ideal.
 This can be removed if the main project is moved to its own subdirectory (thus becoming a sibling of the demo, instead of its parent, and making the demo no longer a project-in-a-project).
-
-## Running the project
-
-Run `yarn start`.
-
-The demo should become available at `localhost:3000` in your browser.
 
 ---
 
