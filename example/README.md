@@ -1,4 +1,4 @@
-# `crux`/`usage-example`
+# `crux`/`example`
 
 A simple demo of `crux` components used in a webapp.
 
