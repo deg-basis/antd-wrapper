@@ -28,12 +28,6 @@ Install Crux
 yarn add @basistechnology/crux
 ```
 
-You also need to install the peer dependencies `antd`, `classnames` and `react` if not installed yet.
-
-```shell
-yarn add antd classnames
-```
-
 Import Crux
 
 ```javascript
