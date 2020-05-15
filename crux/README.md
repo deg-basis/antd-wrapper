@@ -30,16 +30,20 @@ yarn styleguide
 
 ## Use Crux in Your Local Environment
 
-To use Crux in your local environment (not on a repo), firstly you need to build:
+To use Crux in your local environment (not on a repo), firstly, you need to build Crux and make a link to it.
 
 ```
 yarn build
+node scripts/link.js <path/to/app>
 ```
 
-And then, refer it from another project.
+When you want to use the GitHub Packages version of Crux, re-install dependencies. `link.js` set up links. (See https://github.com/facebook/react/issues/14257#issuecomment-595183610)
+
+Both in the app directory and the Crux directory:
 
 ```
-yarn add <path/to/crux>/dist
+rm -rf node_modules
+yarn install
 ```
 
 ## Publishing
