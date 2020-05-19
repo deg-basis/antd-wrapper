@@ -1,5 +1,4 @@
 import ANTDButton from 'antd/es/button';
-import 'antd/es/button/style/css';
 import React from 'react';
 
 export type ButtonType = 'default' | 'primary' | 'ghost' | 'dashed' | 'danger' | 'link';

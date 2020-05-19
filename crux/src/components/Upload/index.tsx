@@ -7,10 +7,6 @@ import { RcFile, UploadChangeParam } from 'antd/es/upload';
 import { UploadFile } from 'antd/es/upload/interface';
 import { UploadProps } from 'antd/lib/upload/interface';
 import { getMessages } from '../../i18n';
-import 'antd/es/button/style/css';
-import 'antd/es/modal/style/css';
-import 'antd/es/spin/style/css';
-import 'antd/es/upload/style/css';
 
 const T = getMessages('Upload');
 

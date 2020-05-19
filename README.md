@@ -6,6 +6,8 @@ Components for Rosette User eXperience
 
 ### Using with create-react-app project
 
+#### Configure Authentication to GitHub Packages
+
 Create `.npmrc` file in your project root directory with the following content.
 
 For yarn ([GitHub Packages issue](https://github.community/t5/Project-Development-Help-and/Consume-Github-Package-private-registry-with-yarn/td-p/43463))
@@ -21,6 +23,22 @@ registry=https://npm.pkg.github.com/basistechnology
 ```
 
 And then, login to GitHub Packages. (See _Login to Github Packages_ section)
+
+#### Configure How to Load CSS of antd
+
+You need to load antd's CSS by your self.
+
+Load whole CSS in your css.
+
+```
+@import '~antd/dist/antd.css';
+```
+
+Or use `craco` for optimized load.
+
+https://github.com/DocSpring/craco-antd
+
+#### Use Crux
 
 Install Crux
 
