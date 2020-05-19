@@ -12,7 +12,7 @@ if (process.argv.length !== 3) {
   process.exit(1);
 }
 
-const cruxDir = path.basename(__dirname);
+const cruxDir = path.dirname(__dirname);
 const appDir = process.argv[2];
 const nodeModulesDir = path.resolve(appDir, 'node_modules');
 
