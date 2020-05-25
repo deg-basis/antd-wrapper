@@ -45,6 +45,10 @@
     "webpack": "^4.42.0"
   },
   "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "peerDependencies": {
     "react": "^16.13.0"
   },
@@ -52,11 +56,10 @@
     "registry": "https://npm.pkg.github.com/"
   },
   "scripts": {
-    "build": "run-s clean tsc copy-css copy-assets copy-packagejson",
+    "build": "run-s clean tsc copy-css copy-assets",
     "clean": "rimraf ./dist",
     "copy-assets": "ncp src/assets dist/assets",
     "copy-css": "cpx src/**/*.css dist",
-    "copy-packagejson": "cpx package.json dist",
     "fixpack": "fixpack",
     "format": "prettier --write \"**/*.{js,ts,tsx,json,md}\"",
     "lint": "run-p lint:*",
@@ -65,6 +68,7 @@
     "styleguide": "styleguidist server",
     "styleguide:build": "styleguidist build",
     "test": "jest",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "prepublishOnly": "npm run build"
   }
 }

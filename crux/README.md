@@ -48,10 +48,10 @@ yarn install
 
 ## Publishing
 
-You can publish the package by the following command. Make sure you have built the project.
+You can publish the package by the following command.
 
 ```
-npm publish dist
+yarn publish --new-version <version>
 ```
 
 Note that you need to login to GitHub packages. (See _Login to GitHub Packages_ section of `../README.md`)
