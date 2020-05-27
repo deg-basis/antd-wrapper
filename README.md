@@ -26,7 +26,7 @@ And then, login to GitHub Packages. (See _Login to Github Packages_ section)
 
 #### Configure How to Load CSS of antd
 
-You need to load antd's CSS by your self.
+You need to load antd's CSS by yourself.
 
 Load whole CSS in your css.
 
