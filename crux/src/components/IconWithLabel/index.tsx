@@ -11,7 +11,7 @@ const IconWithLabel: React.FC<{
 }> = ({ iconPosition = 'left', ...props }) => {
   const icon = (
     <Icon
-      className={cx(styles.root, {
+      className={cx({
         [styles.left]: iconPosition === 'left',
         [styles.right]: iconPosition === 'right',
       })}
