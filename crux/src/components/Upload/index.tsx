@@ -30,7 +30,7 @@ const Upload: React.FC<{
   action: string;
   supportedFileTypes: string[];
   data: { [name: string]: string };
-  single: boolean;
+  single?: boolean;
   onUpload: () => void;
   /** on rejected before uploading */
   onReject: (file: RcFile) => void;
