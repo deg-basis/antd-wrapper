@@ -30,13 +30,14 @@ const Upload: React.FC<{
   action: string;
   supportedFileTypes: string[];
   data: { [name: string]: string };
+  single: boolean;
   onUpload: () => void;
   /** on rejected before uploading */
   onReject: (file: RcFile) => void;
   onUploadError: (file: UploadFile) => void;
   onCancel: () => void;
   className?: string;
-}> = ({ onCancel, ...props }) => {
+}> = ({ onCancel, single = false, ...props }) => {
   // all files including not to upload because of unsupported file
   const [numberOfFiles, setNumberOfFiles] = useState(0);
   const [numberOfFilesToUpload, setNumberOfFilesToUpload] = useState(0);
@@ -128,12 +129,10 @@ const Upload: React.FC<{
     }
   };
 
-  const stopPropagation: React.MouseEventHandler = e => e.stopPropagation();
-
   const uploadProps: UploadProps = {
     accept: props.supportedFileTypes.join(','),
     fileList: uploadedFiles,
-    multiple: true,
+    multiple: !single,
     showUploadList: false,
     beforeUpload,
     onChange: handleChange,
@@ -148,32 +147,34 @@ const Upload: React.FC<{
       ? T.progress(displayNumberOfProcessedFiles, displayNumberOfFiles)
       : T.progress(numberOfProcessedFiles, numberOfFiles);
 
+  const uploadIcon = <Icon className={styles.icon} name="upload" />;
+  const stopPropagation: React.MouseEventHandler = e => e.stopPropagation();
+  const fileUploadLink = (message: string) => (
+    <div onClick={stopPropagation}>
+      <AUpload {...uploadProps}>
+        <Button className={styles.button} type="link">
+          {message}
+        </Button>
+      </AUpload>
+    </div>
+  );
+  const directoryUploadLink = (message: string) => (
+    <div onClick={stopPropagation}>
+      <AUpload {...uploadProps} directory={true}>
+        <Button className={styles.button} type="link">
+          {message}
+        </Button>
+      </AUpload>
+    </div>
+  );
+
   return (
     <div className={cx(styles.root, props.className)}>
       <AUpload.Dragger {...uploadProps}>
         <div className={styles.droppableArea}>
-          <span>{T.message.dragFilesHere}</span>
-          <Icon className={styles.icon} name="upload" />
-          <span>{T.message.orBrowseFor}</span>
-          <div onClick={stopPropagation}>
-            <AUpload {...uploadProps}>
-              <Button className={styles.button} type="link">
-                {T.message.files}
-              </Button>
-            </AUpload>
-          </div>
-          {allowDirectoryUpload && (
-            <>
-              <span>{T.message.or}</span>
-              <div onClick={stopPropagation}>
-                <AUpload {...uploadProps} directory={true}>
-                  <Button className={styles.button} type="link">
-                    {T.message.folders}
-                  </Button>
-                </AUpload>
-              </div>
-            </>
-          )}
+          {single && T.message.single(uploadIcon, fileUploadLink)}
+          {!single &&
+            T.message.multiple(uploadIcon, fileUploadLink, allowDirectoryUpload ? directoryUploadLink : undefined)}
         </div>
       </AUpload.Dragger>
       <div className={styles.progressContainer}>
