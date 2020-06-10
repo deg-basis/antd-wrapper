@@ -1,0 +1,11 @@
+.root {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+}
+
+.buttons {
+  align-items: center;
+  display: flex;
+}

@@ -4,3 +4,5 @@ export { default as Icon } from './components/Icon';
 export { default as IconWithLabel } from './components/IconWithLabel';
 export { default as IconWithTooltip } from './components/IconWithTooltip';
 export { default as Upload } from './components/Upload';
+export { default as Menu } from './components/Menu';
+export { default as MenuButton } from './components/MenuButton';

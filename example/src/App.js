@@ -1,6 +1,7 @@
 import React from 'react';
 import { Heading } from '@basistechnology/crux';
 import './App.css';
+import MenuExample from './examples/MenuExample';
 import IconExample from './examples/IconExample';
 import IconWithLabelExample from './examples/IconWithLabelExample';
 import ButtonExample from './examples/ButtonExample';
@@ -12,6 +13,8 @@ import HeadingExample from './examples/HeadingExample';
 function App() {
   return (
     <div className="app">
+      <MenuExample />
+
       <Heading level={1}>Examples</Heading>
 
       <ButtonExample />
