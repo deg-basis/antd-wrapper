@@ -15,15 +15,17 @@ function App() {
     <div className="app">
       <MenuExample />
 
-      <Heading level={1}>Examples</Heading>
+      <div className="app-body">
+        <Heading level={1}>Examples</Heading>
 
-      <ButtonExample />
-      <HeadingExample />
-      <IconExample />
-      <IconWithLabelExample />
-      {/* FIXME: these may be uncommented once UploadExample and IconWithTooltipExample are exported from crux */}
-      {/*<IconWithTooltipExample/>*/}
-      {/*<UploadExample/>*/}
+        <ButtonExample />
+        <HeadingExample />
+        <IconExample />
+        <IconWithLabelExample />
+        {/* FIXME: these may be uncommented once UploadExample and IconWithTooltipExample are exported from crux */}
+        {/*<IconWithTooltipExample/>*/}
+        {/*<UploadExample/>*/}
+      </div>
     </div>
   );
 }

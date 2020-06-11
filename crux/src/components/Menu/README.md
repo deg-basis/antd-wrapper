@@ -1,7 +1,15 @@
 ```jsx
 <Menu logo={Logo}>
-  <MenuButton icon={ProfileIcon}>Profile</MenuButton>
-  <MenuButton icon={SearchIcon}>Search</MenuButton>
-  <MenuButton icon={SettingsIcon}>Settings</MenuButton>
+  <AnyRoutingLibrary route="/profile>
+    <MenuButton icon={ProfileIcon}>Profile</MenuButton>
+  </AnyRoutingLibrary>
+
+  <AnyRoutingLibrary route="/profile>
+    <MenuButton icon={SearchIcon}>Search</MenuButton>
+  </AnyRoutingLibrary>
+
+  <AnyRoutingLibrary route="/profile>
+    <MenuButton icon={SettingsIcon}>Settings</MenuButton>
+  </AnyRoutingLibrary>
 </Menu>
 ```

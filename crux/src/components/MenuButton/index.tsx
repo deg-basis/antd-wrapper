@@ -2,12 +2,13 @@ import React, { ReactNode } from 'react';
 import styles from './MenuButton.module.css';
 
 const MenuButton: React.FC<{
-  logo: ReactNode;
+  icon: ReactNode;
   children: ReactNode[];
-}> = ({ children, logo }) => {
+}> = ({ children, icon }) => {
+  console.log('icon=', icon);
   return (
     <div className={styles.root}>
-      <div className={styles.icon}>{logo}</div>
+      <div className={styles.icon}>{icon}</div>
       <div className={styles.label}>{children}</div>
     </div>
   );

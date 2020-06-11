@@ -1,8 +1,10 @@
 .root {
   align-items: center;
+  border-bottom: 1px solid #e4e4e4;
   display: flex;
   justify-content: space-between;
   padding: 15px 25px;
+  width: 100%;
 }
 
 .buttons {

@@ -1,6 +1,9 @@
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700);
+
 .root {
   align-items: center;
-  border-bottom: 1px solid #e4e4e4;
+  color: #2887d8;
+  cursor: pointer;
   display: flex;
 }
 
@@ -9,12 +12,12 @@
 }
 
 .icon {
-  height: 24px;
-  width: 24px;
+  font-size: 24px;
+  line-height: 100%;
 }
 
 .label {
-  color: #2887d8;
+  font-family: "Source Sans Pro", sans-serif;
   font-size: 14px;
   font-weight: 700;
   line-height: 24px;
