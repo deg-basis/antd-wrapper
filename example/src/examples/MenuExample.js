@@ -17,9 +17,6 @@ export default function MenuExample() {
       <MenuButton icon={<Icon name="evaluate"/>}>Evaluate</MenuButton>
       <MenuButton icon={<Icon name="settings"/>}>Configure</MenuButton>
       <MenuButton icon={<Icon name="help"/>}>Help</MenuButton>
-      {/*<MenuButton icon={<Icon name="evaluate"/>}>Dashboard</MenuButton>*/}
-      {/*<MenuButton icon={<Icon name="search"/>}>Search</MenuButton>*/}
-      {/*<MenuButton icon={<Icon name="settings"/>}>Settings</MenuButton>*/}
     </Menu>
   );
 }

@@ -1,15 +1,15 @@
 ```jsx
 <Menu logo={Logo}>
-  <AnyRoutingLibrary route="/profile>
+  <YourRoutingLibrary route="/profile>
     <MenuButton icon={ProfileIcon}>Profile</MenuButton>
-  </AnyRoutingLibrary>
+  </YourRoutingLibrary>
 
-  <AnyRoutingLibrary route="/profile>
+  <YourRoutingLibrary route="/profile>
     <MenuButton icon={SearchIcon}>Search</MenuButton>
-  </AnyRoutingLibrary>
+  </YourRoutingLibrary>
 
-  <AnyRoutingLibrary route="/profile>
+  <YourRoutingLibrary route="/profile>
     <MenuButton icon={SettingsIcon}>Settings</MenuButton>
-  </AnyRoutingLibrary>
+  </YourRoutingLibrary>
 </Menu>
 ```
