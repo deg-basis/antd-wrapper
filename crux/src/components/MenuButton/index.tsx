@@ -5,7 +5,6 @@ const MenuButton: React.FC<{
   icon: ReactNode;
   children: ReactNode[];
 }> = ({ children, icon }) => {
-  console.log('icon=', icon);
   return (
     <div className={styles.root}>
       <div className={styles.icon}>{icon}</div>
