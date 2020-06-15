@@ -6,9 +6,8 @@ import IconExample from './examples/IconExample';
 import IconWithLabelExample from './examples/IconWithLabelExample';
 import ButtonExample from './examples/ButtonExample';
 import HeadingExample from './examples/HeadingExample';
-// FIXME: these may be uncommented once UploadExample and IconWithTooltipExample are exported from crux
-// import UploadExample from "./examples/UploadExample";
-// import IconWithTooltipExample from "./examples/IconWithTooltipExample";
+import UploadExample from "./examples/UploadExample";
+import IconWithTooltipExample from "./examples/IconWithTooltipExample";
 
 function App() {
   return (
@@ -22,9 +21,8 @@ function App() {
         <HeadingExample />
         <IconExample />
         <IconWithLabelExample />
-        {/* FIXME: these may be uncommented once UploadExample and IconWithTooltipExample are exported from crux */}
-        {/*<IconWithTooltipExample/>*/}
-        {/*<UploadExample/>*/}
+        <IconWithTooltipExample/>
+        <UploadExample/>
       </div>
     </div>
   );

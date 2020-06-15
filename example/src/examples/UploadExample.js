@@ -7,7 +7,7 @@ export default function UploadExample() {
     <Example label="Upload">
       <Upload
         action="/upload"
-        supportedFileTypes={['image/*']}
+        supportedFileTypes={['*']}
         data={{ prop1: 'value1' }}
         onUpload={() => {}}
         onReject={() => {}}
