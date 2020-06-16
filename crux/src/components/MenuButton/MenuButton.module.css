@@ -5,8 +5,14 @@
   display: flex;
 }
 
-.root:not(:first-child) {
-  margin-left: 25px;
+.enabled {
+  color: #2887d8;
+  cursor: pointer;
+}
+
+.disabled {
+  color: #bfbfbf;
+  cursor: not-allowed;
 }
 
 .icon {
