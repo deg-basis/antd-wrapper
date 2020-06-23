@@ -1,9 +1,10 @@
-import React, {useState} from "react";
+import React, {useState, useCallback} from "react";
 import { Icon, Menu, MenuButton } from "@basistechnology/crux";
 import "./MenuExample.css";
+import { IconWithLabel } from '@basistechnology/crux';
 
 const FakeLogo = (
-  <div style={{ fontSize: 38, display: "flex", alignItems: "center" }}>
+  <div className="fake-logo">
     L<Icon name="refresh" />GO
   </div>
 );
@@ -11,62 +12,38 @@ const FakeLogo = (
 export default function MenuExample() {
   const [activeButton, setActiveButton] = useState("upload");
 
+  const handleClick = useCallback((event) => setActiveButton(event.key), []);
+
   return (
-    <Menu logo={FakeLogo}>
-      <div onClick={() => setActiveButton("upload")}>
-        <MenuButton
-          icon={<Icon name="upload" />}
-          active={activeButton === "upload"}
-        >
-          Upload Index
-        </MenuButton>
-      </div>
+    <Menu
+      logo={FakeLogo}
+      defaultActiveKey="upload"
+      onClick={handleClick}
+      selectedKeys={[activeButton]}
+    >
+      <MenuButton key="upload">
+        <IconWithLabel name="upload" label="Upload Index"/>
+      </MenuButton>
 
-      <div onClick={() => setActiveButton("search")}>
-        <MenuButton
-          icon={<Icon name="search" />}
-          active={activeButton === "search"}
-        >
-          Search
-        </MenuButton>
-      </div>
+      <MenuButton key="search">
+        <IconWithLabel name="search" label="Search"/>
+      </MenuButton>
 
-      <div onClick={() => setActiveButton("compare")}>
-        <MenuButton
-          icon={<Icon name="compare" />}
-          active={activeButton === "compare"}
-        >
-          Compare
-        </MenuButton>
-      </div>
+      <MenuButton key="compare">
+        <IconWithLabel name="compare" label="Compare"/>
+      </MenuButton>
 
-      <div>
-        <MenuButton
-          icon={<Icon name="evaluate" />}
-          active={activeButton === "evaluate"}
-          disabled
-        >
-          Evaluate
-        </MenuButton>
-      </div>
+      <MenuButton key="evaluate" disabled>
+        <IconWithLabel name="evaluate" label="Evaluate"/>
+      </MenuButton>
 
-      <div onClick={() => setActiveButton("settings")}>
-        <MenuButton
-          icon={<Icon name="settings" />}
-          active={activeButton === "settings"}
-        >
-          Configure
-        </MenuButton>
-      </div>
+      <MenuButton key="settings">
+        <IconWithLabel name="settings" label="Configure"/>
+      </MenuButton>
 
-      <div onClick={() => setActiveButton("help")}>
-        <MenuButton
-          icon={<Icon name="help" />}
-          active={activeButton === "help"}
-        >
-          Help
-        </MenuButton>
-      </div>
+      <MenuButton key="help">
+        <IconWithLabel name="help" label="Help"/>
+      </MenuButton>
     </Menu>
   );
 }

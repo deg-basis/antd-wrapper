@@ -1,17 +1,22 @@
 .root {
   align-items: center;
-  border-bottom: 1px solid #e4e4e4;
   display: flex;
+  height: 64px;
   justify-content: space-between;
-  padding: 16px 24px;
   width: 100%;
 }
 
-.buttons {
-  align-items: center;
-  display: flex;
+.logo {
+  height: calc(141px / 3);
+  width: calc(548px / 3);
 }
 
-.buttons > * {
-  margin-left: 25px;
+.menuContainer {
+  margin-left: 48px;
+  overflow: hidden;
+}
+
+.menu {
+  display: flex;
+  font-weight: 500;
 }

@@ -1,23 +1,15 @@
 import React, { ReactNode } from 'react';
-import cx from 'classnames';
-import styles from './MenuButton.module.css';
-
-const classes = (disabled: boolean): string =>
-  cx(styles.root, {
-    [styles.disabled]: disabled,
-    [styles.enabled]: !disabled,
-  });
+import { Menu as AntMenu } from 'antd';
 
 const MenuButton: React.FC<{
-  icon: ReactNode;
   children: ReactNode[];
-  disabled: boolean;
-}> = ({ disabled, children, icon }) => {
+  disabled?: boolean;
+  key: string;
+}> = ({ children, disabled, key, ...antDProps }) => {
   return (
-    <div className={classes(disabled)}>
-      <div className={styles.icon}>{icon}</div>
-      <div className={styles.label}>{children}</div>
-    </div>
+    <AntMenu.Item key={key} disabled={disabled} {...antDProps}>
+      {children}
+    </AntMenu.Item>
   );
 };
 

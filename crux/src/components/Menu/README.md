@@ -1,35 +1,54 @@
 ### General usage
 
 ```jsx
-<Menu logo={Logo}>
-  <YourRoutingLibrary route="/profile">
-    <MenuButton icon={ProfileIcon}>Profile</MenuButton>
-  </YourRoutingLibrary>
+<Menu logo={Logo} onClick={handleRouteChange}>
+  <MenuButton key="upload">
+    <YourRoutingLibrary route="/upload">
+      <IconWithLabel name="upload" label="Upload Index" />
+    </YourRoutingLibrary>
+  </MenuButton>
 
-  <YourRoutingLibrary route="/search">
-    <MenuButton icon={SearchIcon}>Search</MenuButton>
-  </YourRoutingLibrary>
+  <MenuButton key="search">
+    <YourRoutingLibrary route="/search">
+      <IconWithLabel name="search" label="Search Index" />
+    </YourRoutingLibrary>
+  </MenuButton>
 
-  <YourRoutingLibrary route="/settings">
-    <MenuButton icon={SettingsIcon}>Settings</MenuButton>
-  </YourRoutingLibrary>
+  <MenuButton key="settings">
+    <YourRoutingLibrary route="/settings">
+      <IconWithLabel name="settings" label="Settings Index" />
+    </YourRoutingLibrary>
+  </MenuButton>
 </Menu>
 ```
 
 ### Using `react-router`
 
 ```jsx
-<Menu logo={Logo}>
-  <Link to="/profile">
-    <MenuButton icon={ProfileIcon}>Profile</MenuButton>
-  </Link>
+function MyMenu() {
+  const history = useHistory();
+  const handleRouteChange = useCallback(event => history.push(`/${event.key}`), [history]);
 
-  <Link to="/search">
-    <MenuButton icon={SearchIcon}>Search</MenuButton>
-  </Link>
+  return (
+    <Menu logo={Logo} onClick={handleRouteChange}>
+      <MenuButton key="upload">
+        <Link to="/upload">
+          <IconWithLabel name="upload" label="Upload Index" />
+        </YourRoutingLibrary>
+      </MenuButton>
 
-  <Link to="/settings">
-    <MenuButton icon={SettingsIcon}>Settings</MenuButton>
-  </Link>
-</Menu>
+      <MenuButton key="search">
+        <Link to="/search">
+          <IconWithLabel name="search" label="Search Index" />
+        </YourRoutingLibrary>
+      </MenuButton>
+
+      <MenuButton key="settings">
+        <Link to="/settings">
+          <IconWithLabel name="settings" label="Settings Index" />
+        </YourRoutingLibrary>
+      </MenuButton>
+    </Menu>
+  );
+}
 ```
