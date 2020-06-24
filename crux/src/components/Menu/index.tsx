@@ -10,7 +10,6 @@ const Menu: React.FC<{
   logoAltText?: string;
   onClick: (event: ClickParam) => void;
 }> = ({ children, logo, onClick, selectedKeys }) => {
-  console.log('type:', typeof AntMenu, typeof AntMenu.Item, typeof AntMenu.ItemGroup);
   return (
     <Layout.Header className={styles.root}>
       {logo}
