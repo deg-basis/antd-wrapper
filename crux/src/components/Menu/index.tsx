@@ -1,4 +1,5 @@
 import React, { MouseEventHandler, ReactNode } from 'react';
+import clsx from 'classnames';
 import AntMenu, { ClickParam } from 'antd/es/menu';
 import Layout from 'antd/es/layout';
 import styles from './Menu.module.css';
@@ -9,9 +10,10 @@ const Menu: React.FC<{
   selectedKeys: string[];
   logoAltText?: string;
   onClick: (event: ClickParam) => void;
-}> = ({ children, logo, onClick, selectedKeys }) => {
+  className?: string;
+}> = ({ children, className, logo, onClick, selectedKeys }) => {
   return (
-    <Layout.Header className={styles.root}>
+    <Layout.Header className={clsx(styles.root, className)}>
       {logo}
 
       <div className={styles.menuContainer}>
