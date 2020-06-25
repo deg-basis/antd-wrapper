@@ -1,6 +1,6 @@
 import cx from 'classnames';
 import styles from './Upload.module.css';
-import React, { useCallback, useEffect, useMemo, useState } from 'react';
+import React, { ReactNode, useCallback, useEffect, useMemo, useState } from 'react';
 import Icon from '../Icon';
 import { Button, Modal, Spin, Upload as AUpload } from 'antd';
 import { RcFile, UploadChangeParam } from 'antd/es/upload';
@@ -186,7 +186,7 @@ const Upload: React.FC<{
   // This function uses only stopPropagation. It's ok to use any.
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const stopPropagation: React.EventHandler<any> = e => e.stopPropagation();
-  const fileUploadLink = (message: string) => (
+  const fileUploadLink = (message: string): ReactNode => (
     <div onClick={stopPropagation} onDrop={stopPropagation}>
       <AUpload {...uploadProps}>
         <Button className={styles.button} type="link">
@@ -195,7 +195,7 @@ const Upload: React.FC<{
       </AUpload>
     </div>
   );
-  const directoryUploadLink = (message: string) => (
+  const directoryUploadLink = (message: string): ReactNode => (
     <div onClick={stopPropagation} onDrop={stopPropagation}>
       <AUpload {...uploadProps} directory={true}>
         <Button className={styles.button} type="link">
