@@ -183,9 +183,11 @@ const Upload: React.FC<{
       : T.progress(numberOfProcessedFiles, numberOfFiles);
 
   const uploadIcon = <Icon className={styles.icon} name="upload" />;
-  const stopPropagation: React.MouseEventHandler = e => e.stopPropagation();
+  // This function uses only stopPropagation. It's ok to use any.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const stopPropagation: React.EventHandler<any> = e => e.stopPropagation();
   const fileUploadLink = (message: string) => (
-    <div onClick={stopPropagation}>
+    <div onClick={stopPropagation} onDrop={stopPropagation}>
       <AUpload {...uploadProps}>
         <Button className={styles.button} type="link">
           {message}
@@ -194,7 +196,7 @@ const Upload: React.FC<{
     </div>
   );
   const directoryUploadLink = (message: string) => (
-    <div onClick={stopPropagation}>
+    <div onClick={stopPropagation} onDrop={stopPropagation}>
       <AUpload {...uploadProps} directory={true}>
         <Button className={styles.button} type="link">
           {message}
