@@ -26,6 +26,13 @@ const isDirectoryUploadSupported = (): boolean => {
   return typeof input.webkitdirectory === 'boolean';
 };
 
+// This updates the content type of the given file to text/csv.
+// The rest API does not necessarily utilize the content type to process the content,
+// but setting the correct value here for safety.
+const updateContentTypeForWindowsCsvWorkaround = (file: RcFile): File => {
+  return new File([file], file.name, { type: 'text/csv' });
+};
+
 const Upload: React.FC<{
   action: string;
   supportedFileTypes: string[];
@@ -52,6 +59,13 @@ const Upload: React.FC<{
   const [uploadState, setUploadState] = useState<UploadState>('stopped');
 
   const allowDirectoryUpload = useMemo(() => isDirectoryUploadSupported(), []);
+
+  // In Windows, content-type is determined by using the content, and it varies some conditions (e.g., MS Excel is installed or not).
+  // Notably, Windows cannot assume content-type for CSV files when there is no MS Excel installed.
+  // This makes matching with supported types not working, so applying workaround here.
+  const shouldUseWindowsCsvWorkaround = useMemo(() => props.supportedFileTypes.includes('text/csv'), [
+    props.supportedFileTypes,
+  ]);
 
   const stop = useCallback(() => {
     setUploadedFiles([]);
@@ -90,7 +104,9 @@ const Upload: React.FC<{
 
     setNumberOfFiles(x => x + 1);
 
-    if (props.supportedFileTypes.length > 0 && !props.supportedFileTypes.includes(file.type)) {
+    if (shouldUseWindowsCsvWorkaround && file.name.endsWith('.csv')) {
+      // don't reject.
+    } else if (props.supportedFileTypes.length > 0 && !props.supportedFileTypes.includes(file.type)) {
       props.onReject(file);
       setNumberOfProcessedFiles(x => x + 1);
       return false;
@@ -98,6 +114,14 @@ const Upload: React.FC<{
 
     setNumberOfFilesToUpload(x => x + 1);
     return true;
+  };
+
+  const transformFile = (file: RcFile): string | Blob | File | PromiseLike<string | Blob | File> => {
+    if (file.name.endsWith('.csv')) {
+      return updateContentTypeForWindowsCsvWorkaround(file);
+    }
+
+    return file;
   };
 
   const handleCancelClick = (e: React.MouseEvent<HTMLElement>): void => {
@@ -129,8 +153,18 @@ const Upload: React.FC<{
     }
   };
 
+  const accept = useMemo(() => {
+    // add .csv to accept CSV files in Windows
+    // https://stackoverflow.com/questions/33147930/how-to-accept-csv-format-input-file-cross-browsers/33496186#33496186
+    const types = props.supportedFileTypes;
+    if (shouldUseWindowsCsvWorkaround) {
+      types.push('.csv');
+    }
+    return types.join(',');
+  }, [props.supportedFileTypes, shouldUseWindowsCsvWorkaround]);
+
   const uploadProps: UploadProps = {
-    accept: props.supportedFileTypes.join(','),
+    accept,
     fileList: uploadedFiles,
     multiple: !single,
     showUploadList: false,
@@ -140,6 +174,7 @@ const Upload: React.FC<{
     disabled: uploadState === 'uploading' || uploadState === 'canceling' || uploadState === 'finishing',
     method: 'post',
     data: props.data,
+    transformFile,
   };
 
   const numberOfFilesLabel =
