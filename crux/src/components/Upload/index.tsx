@@ -33,6 +33,11 @@ const updateContentTypeForWindowsCsvWorkaround = (file: RcFile): File => {
   return new File([file], file.name, { type: 'text/csv' });
 };
 
+// use function to avoid @typescript-eslint/no-empty-function
+function noop() {
+  // do nothing
+}
+
 const Upload: React.FC<{
   action: string;
   supportedFileTypes: string[];
@@ -187,7 +192,7 @@ const Upload: React.FC<{
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const stopPropagation: React.EventHandler<any> = e => e.stopPropagation();
   const fileUploadLink = (message: string): ReactNode => (
-    <div onClick={stopPropagation} onDrop={stopPropagation}>
+    <div onClick={stopPropagation} onDrop={noop}>
       <AUpload {...uploadProps}>
         <Button className={styles.button} type="link">
           {message}
@@ -196,7 +201,7 @@ const Upload: React.FC<{
     </div>
   );
   const directoryUploadLink = (message: string): ReactNode => (
-    <div onClick={stopPropagation} onDrop={stopPropagation}>
+    <div onClick={stopPropagation} onDrop={noop}>
       <AUpload {...uploadProps} directory={true}>
         <Button className={styles.button} type="link">
           {message}
