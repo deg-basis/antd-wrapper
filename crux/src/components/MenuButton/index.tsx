@@ -2,7 +2,7 @@ import React, { ReactNode } from 'react';
 import { Menu as AntMenu } from 'antd';
 
 const MenuButton: React.FC<{
-  children: ReactNode[];
+  children: ReactNode | ReactNode[];
   disabled?: boolean;
   key: string;
 }> = ({ children, disabled, key, ...antDProps }) => {
