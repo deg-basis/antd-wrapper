@@ -26,12 +26,16 @@ And then, login to GitHub Packages. (See _Login to Github Packages_ section)
 
 #### Configure How to Load CSS of antd
 
-You need to load antd's CSS by yourself.
+You need to load an antd's Less file by yourself.
 
-Load whole CSS in your css.
-
+Create a Less file with the following content.
 ```
-@import '~antd/dist/antd.css';
+@import '~antd/dist/antd.less';
+```
+
+And then, load it from a `.ts` or `.tsx` file.
+```
+import './App.less';
 ```
 
 Or use `craco` for optimized load.
