@@ -1,7 +1,7 @@
 {
   "name": "@basistechnology/crux",
   "description": "Components for Rosette User eXperience",
-  "version": "0.1.6",
+  "version": "0.1.8",
   "dependencies": {
     "antd": "^4.0.2",
     "classnames": "^2.2.6"
