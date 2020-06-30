@@ -24,6 +24,7 @@
     "file-loader": "^5.1.0",
     "fixpack": "^3.0.6",
     "husky": "^4.2.3",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^25.4.0",
     "lint-staged": "^10.0.8",
     "ncp": "^2.0.0",
