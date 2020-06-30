@@ -38,15 +38,56 @@ function noop() {
   // do nothing
 }
 
+/**
+ * Upload component
+ *
+ * Features:
+ * - Drag and drop
+ * - Show a progress indicator while uploading
+ * - Single or multiple files modes
+ * - Cross browsers support for accepting CSV file
+ *
+ * Not Supported Features:
+ * - This component does not expose the uploaded file list. You should manage it in your server-side.
+ *
+ * Example:
+ * ```jsx
+ * <Upload
+ *   action="/upload"
+ *   supportedFileTypes={['image/png']}
+ *   data={{}}
+ *   onUpload={() => {}}
+ *   onReject={() => { throw new Error('file rejected') }}
+ *   onUploadError={() => { throw new Error(`upload error: ${file.error}`) }}
+ *   onCancel={() => {}}
+ * />
+ * ```
+ */
 const Upload: React.FC<{
+  /** Uploading URL */
   action: string;
+  /** File types that can be accepted. See input accept attribute
+   * (https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#accept) */
   supportedFileTypes: string[];
+  /** Extra parameters to be sent */
   data: { [name: string]: string };
+  /** Accept a single file at a time (Default: false) */
   single?: boolean;
+  /** Called on uploading a file in success */
   onUpload: () => void;
-  /** on rejected before uploading */
+  /**
+   * Called on rejected before uploading
+   *
+   * @param file AntD RcFile
+   */
   onReject: (file: RcFile) => void;
+  /**
+   * Called on failure on a server-side
+   *
+   * @param file AntD UploadFile
+   */
   onUploadError: (file: UploadFile) => void;
+  /** Called on a user clicked the cancel button */
   onCancel: () => void;
   className?: string;
 }> = ({ onCancel, single = false, ...props }) => {
