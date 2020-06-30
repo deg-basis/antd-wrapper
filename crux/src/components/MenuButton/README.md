@@ -1,3 +1,1 @@
-```jsx
-<MenuButton icon={SettingsIcon}>Settings</MenuButton>
-```
+See `<Menu>`

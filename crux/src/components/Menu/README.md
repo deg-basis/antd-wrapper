@@ -1,7 +1,15 @@
 ### General usage
 
 ```jsx
-<Menu logo={Logo} onClick={handleRouteChange}>
+import Menu from './index';
+import MenuButton from '../MenuButton';
+import IconWithLabel from '../IconWithLabel';
+const handleRouteChange = () => {
+  /* do something about route change */
+};
+const YourRoutingLibrary = ({ children }) => <>{children}</>;
+
+<Menu logo={<div>LOGO</div>} onClick={handleRouteChange}>
   <MenuButton key="upload">
     <YourRoutingLibrary route="/upload">
       <IconWithLabel name="upload" label="Upload Index" />
@@ -19,36 +27,39 @@
       <IconWithLabel name="settings" label="Settings Index" />
     </YourRoutingLibrary>
   </MenuButton>
-</Menu>
+</Menu>;
 ```
 
 ### Using `react-router`
 
 ```jsx
-function MyMenu() {
-  const history = useHistory();
-  const handleRouteChange = useCallback(event => history.push(`/${event.key}`), [history]);
+import Menu from './index';
+import MenuButton from '../MenuButton';
+import IconWithLabel from '../IconWithLabel';
+import { BrowserRouter, Link } from 'react-router-dom';
+const handleRouteChange = () => {
+  /* do something about route change */
+};
 
-  return (
-    <Menu logo={Logo} onClick={handleRouteChange}>
-      <MenuButton key="upload">
-        <Link to="/upload">
-          <IconWithLabel name="upload" label="Upload Index" />
-        </YourRoutingLibrary>
-      </MenuButton>
+<BrowserRouter>
+  <Menu logo={<div>LOGO</div>} onClick={handleRouteChange}>
+    <MenuButton key="upload">
+      <Link to="/upload">
+        <IconWithLabel name="upload" label="Upload Index" />
+      </Link>
+    </MenuButton>
 
-      <MenuButton key="search">
-        <Link to="/search">
-          <IconWithLabel name="search" label="Search Index" />
-        </YourRoutingLibrary>
-      </MenuButton>
+    <MenuButton key="search">
+      <Link to="/search">
+        <IconWithLabel name="search" label="Search Index" />
+      </Link>
+    </MenuButton>
 
-      <MenuButton key="settings">
-        <Link to="/settings">
-          <IconWithLabel name="settings" label="Settings Index" />
-        </YourRoutingLibrary>
-      </MenuButton>
-    </Menu>
-  );
-}
+    <MenuButton key="settings">
+      <Link to="/settings">
+        <IconWithLabel name="settings" label="Settings Index" />
+      </Link>
+    </MenuButton>
+  </Menu>
+</BrowserRouter>;
 ```
