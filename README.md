@@ -105,7 +105,9 @@ Before managing or installing a package, you need to login to GitHub Packages. I
 
 ### Generating Personal Authentication Token
 
-You can generate your token on GitHub (Settings|Developer settings|Personal access tokens). Required scope for the personal access token is shown in the below table.
+You can generate your token on [https://github.com/settings/tokens](GitHub)
+(Settings|Developer settings|Personal access tokens). Required scope for the personal
+access token is shown in the below table.
 
 For example, A Crux user needs `read:packages` and `read` permission for the Crux repository.
 
