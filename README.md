@@ -6,24 +6,6 @@ Components for Rosette User eXperience
 
 ### Using with create-react-app project
 
-#### Configure Authentication to GitHub Packages
-
-Create `.npmrc` file in your project root directory with the following content.
-
-For yarn ([GitHub Packages issue](https://github.community/t5/Project-Development-Help-and/Consume-Github-Package-private-registry-with-yarn/td-p/43463))
-
-```
-@basistechnology:registry=https://npm.pkg.github.com
-```
-
-For npm
-
-```
-registry=https://npm.pkg.github.com/basistechnology
-```
-
-And then, login to GitHub Packages. (See _Login to Github Packages_ section)
-
 #### Configure How to Load CSS of antd
 
 You need to load an antd's Less file by yourself.
@@ -47,13 +29,13 @@ https://github.com/DocSpring/craco-antd
 Install Crux
 
 ```shell
-yarn add @basistechnology/crux
+yarn add antd-wrapper
 ```
 
 Import Crux
 
 ```javascript
-import { Icon } from '@basistechnology/crux';
+import { Icon } from 'antd-wrapper';
 ```
 
 Use Crux component
@@ -98,32 +80,3 @@ To run styleguidist server locally:
 yarn install
 yarn styleguide
 ```
-
-## Login to GitHub Packages
-
-Before managing or installing a package, you need to login to GitHub Packages. It is required to enter your GitHub authentication token as a password.
-
-### Generating Personal Authentication Token
-
-You can generate your token on [https://github.com/settings/tokens](GitHub)
-(Settings|Developer settings|Personal access tokens). Required scope for the personal
-access token is shown in the below table.
-
-For example, A Crux user needs `read:packages` and `read` permission for the Crux repository.
-
-| Scope             | Repository permissions | Crux user | Crux developer | Crux admin |
-| ----------------- | ---------------------- | --------- | -------------- | ---------- |
-| `read:packages`   | read                   | ✓         | ✓              | ✓          |
-| `write:packages`  | write                  |           | ✓              | ✓          |
-| `delete:packages` | admin                  |           |                | ✓          |
-| `repo`            |                        | ✓         | ✓              | ✓          |
-
-### Run npm login
-
-```
-npm login --registry=https://npm.pkg.github.com/
-Username: <username>
-Password: <authentication token>
-Email: <email>
-```
-

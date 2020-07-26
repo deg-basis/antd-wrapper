@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Upload } from '@basistechnology/crux';
+import { Upload } from 'antd-wrapper';
 import Example from './Example';
 
 export default function UploadExample() {

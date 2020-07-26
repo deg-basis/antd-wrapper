@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from '@basistechnology/crux';
+import { Button } from 'antd-wrapper';
 import Example from './Example';
 import './ButtonExample.css';
 

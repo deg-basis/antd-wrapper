@@ -1,5 +1,5 @@
 import React from 'react';
-import { IconWithTooltip } from '@basistechnology/crux';
+import { IconWithTooltip } from 'antd-wrapper';
 import Example from './Example';
 
 export default function IconWithTooltipExample() {

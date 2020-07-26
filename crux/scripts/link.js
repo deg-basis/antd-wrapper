@@ -31,8 +31,8 @@ execSync('yarn link', {
   cwd: path.resolve(nodeModulesDir, 'react-dom'),
 });
 
-console.log('app: yarn link @basistechnology/crux');
-execSync('yarn link @basistechnology/crux', {
+console.log('app: yarn link @antd-wrapper');
+execSync('yarn link @antd-wrapper', {
   cwd: appDir,
 });
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '@basistechnology/crux';
+import { Icon } from 'antd-wrapper';
 import Example from './Example';
 
 export default function IconExample() {

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading } from '@basistechnology/crux';
+import { Heading } from 'antd-wrapper';
 import './App.css';
 import MenuExample from './examples/MenuExample';
 import IconExample from './examples/IconExample';

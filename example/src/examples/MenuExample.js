@@ -1,7 +1,7 @@
 import React, {useState, useCallback} from "react";
-import { Icon, Menu, MenuButton } from "@basistechnology/crux";
+import { Icon, Menu, MenuButton } from "antd-wrapper";
 import "./MenuExample.css";
-import { IconWithLabel } from '@basistechnology/crux';
+import { IconWithLabel } from 'antd-wrapper';
 
 const FakeLogo = (
   <div className="fake-logo">

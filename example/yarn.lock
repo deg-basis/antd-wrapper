@@ -1095,14 +1095,6 @@
     lodash "^4.17.13"
     to-fast-properties "^2.0.0"
 
-"@basistechnology/crux@^0.1.8":
-  version "0.1.8"
-  resolved "https://npm.pkg.github.com/download/@basistechnology/crux/0.1.8/2d7ca8d883af8cb2115c356b1b9c164ebd1ed350884a4d5944944ff30f282805#0ef1fa61247e9270b7e4ae9a6555a6d68e4637b6"
-  integrity sha512-eCKVRUV8gSmEd8bF7TPo3wyMdYQf3aLjtdzell6Mk7ERPgjhsAs3OBYNzCOtC+BYnt3m1L3lNTQiicaPbjsg+w==
-  dependencies:
-    antd "^4.0.2"
-    classnames "^2.2.6"
-
 "@cnakazawa/watch@^1.0.3":
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/@cnakazawa/watch/-/watch-1.0.4.tgz#f864ae85004d0fcab6f50be9141c4da368d1656a"
